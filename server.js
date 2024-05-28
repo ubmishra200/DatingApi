@@ -426,7 +426,7 @@ app.get("/users/:userId/matches", async (req, res) => {
     res.status(500).json({ message: "Error retrieving the matches", error });
   }
 });
-io.on("connection" {
+io.on("connection", {
   cors: {
     origin: '*',
     methods: ['GET', 'POST']
