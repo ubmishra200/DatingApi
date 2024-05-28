@@ -447,7 +447,7 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(8000, () => {
+http.listen(3000, () => {
   console.log("Socket.IO server running on port 8000");
 });
 
