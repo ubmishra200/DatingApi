@@ -426,12 +426,7 @@ app.get("/users/:userId/matches", async (req, res) => {
     res.status(500).json({ message: "Error retrieving the matches", error });
   }
 });
-io.on("connection", {
-  cors: {
-    origin: '*',
-    methods: ['GET', 'POST']
-  }
-}, (socket) => {
+io.on("connection",(socket) => {
   console.log("a user is connected");
 
   socket.on("sendMessage", async (data) => {
