@@ -61,7 +61,7 @@ const sendVerificationEmail = async (email, verificationToken) => {
     from: "mvsgroup200@gmail.com",
     to: email,
     subject: "Verify Email dating App",
-    text: `The click on following link to verifed email: http://localhost:3000/verify/${verificationToken}`,
+    text: `The click on following link to verifed email: https://datingapi-c6xs.onrender.com/verify/${verificationToken}`,
   };
   try {
     await transpoter.sendMail(mailOption);
