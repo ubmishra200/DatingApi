@@ -53,12 +53,12 @@ const sendVerificationEmail = async (email, verificationToken) => {
   const transpoter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "mvsgroup200@gmail.com",
-      pass: "Uday@bhan200",
+      user: "ubmishra200@gmail.com",
+      pass: "P@r1eg2000",
     },
   });
   const mailOption = {
-    from: "mvsgroup200@gmail.com",
+    from: "ubmishra200@gmail.com",
     to: email,
     subject: "Verify Email dating App",
     text: `The click on following link to verifed email: https://datingapi-c6xs.onrender.com/verify/${verificationToken}`,
