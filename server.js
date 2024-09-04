@@ -41,9 +41,13 @@ app.post("/register", async (req, res) => {
     }
     const newuser = new User({ name, email, password });
     newuser.verificationtoken = await crypto.randomBytes(20).toString("hex");
-
+     
     await newuser.save();
-    sendVerificationEmail(newuser.email, newuser.verificationtoken);
+     newuser.varifed = true;
+    newuser.verificationtoken = undefined;
+    await newuser.save();
+    res.json({ message: "Login sucessfully" });
+    // sendVerificationEmail(newuser.email, newuser.verificationtoken);
   } catch (error) {
     console.log(error);
     res.status(400).json({ message: "some thing error", error });
